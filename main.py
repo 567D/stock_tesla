@@ -5,7 +5,8 @@ import seaborn as sns
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_squared_error
 
-df = pd.read_csv("C:/Users/dkononenko/Downloads/synthetic_stock_data.csv")
+df = pd.read_csv("synthetic_stock_data.csv")
+
 # Преобразуем даты
 df["Date"] = pd.to_datetime(df["Date"])
 
