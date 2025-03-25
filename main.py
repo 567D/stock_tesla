@@ -10,7 +10,6 @@ df = pd.read_csv("synthetic_stock_data.csv")
 # Преобразуем даты
 df["Date"] = pd.to_datetime(df["Date"])
 
-# Выбираем Tesla
 company = "Tesla"
 df_company = df[df["Company"] == company].copy()
 
@@ -28,17 +27,15 @@ plt.plot(df_company["Date"], df_company["Close"], label="Цена закрыти
 # График скользящего среднего
 plt.plot(df_company["Date"], df_company["SMA_5"], label="Скользящее среднее (5)", linestyle="dashed", color="red")
 
-# Заголовок и подписи
+
 plt.title(f"Динамика цен акций {company}", fontsize=14, fontweight="bold")
 plt.xlabel("Дата", fontsize=12)
 plt.ylabel("Цена закрытия (USD)", fontsize=12)
 
-# Улучшение читаемости осей
+
 plt.xticks(rotation=45)
 plt.grid(True, linestyle="--", alpha=0.5)
 
-# Добавление легенды
 plt.legend()
 
-# Отображение графика
 plt.show()
